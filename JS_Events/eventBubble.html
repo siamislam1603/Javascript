@@ -21,6 +21,7 @@
         // It works like bubble, at-first the leaf elements will be executed if any, then it will execute it's parent node sequentially which has on click events. li>ul>div
         document.querySelector('#my-list .item').addEventListener('click',function(event){
             console.log('Clicked on the 1st list item');
+            event.stopPropagation();// stop the bubble up propagation, so, ul>div will not be executed for this event.
         });
         document.getElementById('container').addEventListener('click',function(event){
             console.log('Clicked on the div container');
