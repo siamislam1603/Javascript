@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Event Bubble</h1>
+        <ul id="my-list">
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, quo!</li>
+            <li class="item">Nesciunt in atque soluta fugit tempora error eligendi? Sed, autem!</li>
+            <li class="item">Hic dolore explicabo eaque porro, ipsam cupiditate nesciunt excepturi veritatis.</li>
+            <li class="item">Natus nisi vel ab aspernatur, quas perspiciatis fugiat culpa perferendis?</li>
+            <li class="item">Quasi enim repudiandae maiores dignissimos repellendus? Debitis temporibus eligendi nostrum.</li>
+        </ul>
+    </div>
+    <script>
+        // It works like bubble, at-first the leaf elements will be executed if any, then it will execute it's parent node sequentially which has on click events. li>ul>div
+        document.querySelector('#my-list .item').addEventListener('click',function(event){
+            console.log('Clicked on the 1st list item');
+        });
+        document.getElementById('container').addEventListener('click',function(event){
+            console.log('Clicked on the div container');
+        });
+        document.getElementById('my-list').addEventListener('click',function(event){
+            console.log('Clicked on the ul');
+        })
+    </script>
+</body>
+</html>
