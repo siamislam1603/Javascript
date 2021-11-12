@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Event Bubble</h1>
+        <ul id="my-list">
+            <li class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, quo!</li>
+            <li class="item">Nesciunt in atque soluta fugit tempora error eligendi? Sed, autem!</li>
+            <li class="item">Hic dolore explicabo eaque porro, ipsam cupiditate nesciunt excepturi veritatis.</li>
+            <li class="item">Natus nisi vel ab aspernatur, quas perspiciatis fugiat culpa perferendis?</li>
+            <li class="item">Quasi enim repudiandae maiores dignissimos repellendus? Debitis temporibus eligendi nostrum.</li>
+        </ul>
+        <button id="btn">Add new item</button>
+    </div>
+    <script>
+        var myList=document.getElementById('my-list');
+        // Delete list item
+        myList.addEventListener('click',function(event){
+            console.log(this,event.target); //event.target=child element of this particular element which is clicked whereas this=element
+            event.target.parentNode.removeChild(event.target);
+        });
+        // Add list item
+        var btn=document.getElementById('btn');
+        btn.addEventListener('click',function(event){
+            newList=document.createElement('li');
+            newList.innerText='This is the new text';
+            myList.appendChild(newList);
+        })
+    </script>
+</body>
+</html>
