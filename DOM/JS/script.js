@@ -5,3 +5,12 @@ console.log('Only a specific element of this id:',document.getElementById('first
 var firstParagraph=document.getElementById('first-paragraph');
 firstParagraph.style.color='green';
 firstParagraph.style.fontSize='30px';
+var authors=document.getElementsByClassName('author');
+for(var i=0;authors.length;i++){
+    var element=authors[i];
+    console.log(element.innerHTML);
+    element.style.backgroundColor='blue';
+    element.style.margin='5px';
+    element.style.color='white';
+    element.style.textAlign='center';
+}
