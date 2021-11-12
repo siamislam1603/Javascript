@@ -9,6 +9,7 @@ var authors=document.getElementsByClassName('author');
 for(var i=0;authors.length;i++){
     var element=authors[i];
     console.log(element.innerHTML);
+    element.innerHTML='Lekhok-'+(i+1);
     element.style.backgroundColor='blue';
     element.style.margin='5px';
     element.style.color='white';
