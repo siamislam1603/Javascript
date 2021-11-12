@@ -31,6 +31,8 @@ for(var i=0;i<specialArticles.length;i++){
     element.style.backgroundColor='red';
     element.style.textAlign='center';
     element.style.color='white';
+    // this will set the title attribute of element. If we hover to this article text, it'll show this title.
+    element.setAttribute('title','One of the best authors');
 }
 
 // 1st element of this specific selector can be accessed
