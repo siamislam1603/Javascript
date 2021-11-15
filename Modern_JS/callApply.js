@@ -38,3 +38,14 @@ friendlyChargeBill(4000);
 friendlyChargeBill(3000);
 console.log('Friendly person (bind):',friendlyPerson.salary);
 console.log('Normal Person:',normalPerson.salary);
+
+// We don't need to declare any function to apply call like bind. it can be directly applied to the new object to call another object's method.
+console.log('\n call method:');
+normalPerson.chargeBill.call(heroPerson,5000);
+normalPerson.chargeBill.call(heroPerson,8000);
+console.log(heroPerson.salary);
+
+// apply is also same as call but we need to send arguments as array not the elements.
+console.log('\n apply method:');
+normalPerson.chargeBill.apply(friendlyPerson,[3000]);
+console.log(friendlyPerson.salary);
